@@ -1,7 +1,7 @@
-import json
-import boto3
-from boto3.dynamodb.conditions import Key
-from decimal import Decimal
+import json # for JSON handling
+import boto3 # for DynamoDB interaction
+from boto3.dynamodb.conditions import Key # for querying
+from decimal import Decimal # for handling Decimal types
 
 # DynamoDB configuration
 dynamo_table_name = "demoapi"
@@ -29,6 +29,7 @@ user_path = "/users"
 user_param_path = f"{user_path}/{{id}}"
 
 # Custom JSON encoder for Decimal objects
+# This function is used to convert Decimal objects to float or int when serializing to JSON
 class DecimalEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, Decimal):
@@ -36,6 +37,7 @@ class DecimalEncoder(json.JSONEncoder):
             return int(obj) if obj % 1 == 0 else float(obj)
         return super(DecimalEncoder, self).default(obj)
 
+# This function is used to convert Decimal objects in the response body
 def convert_decimals(obj):
     if isinstance(obj, list):
         return [convert_decimals(i) for i in obj]
@@ -45,6 +47,10 @@ def convert_decimals(obj):
         return int(obj) if obj % 1 == 0 else float(obj)  # Convert to int if it's a whole number, else float
     return obj
 
+# This function is the entry point for the Lambda function
+# It handles incoming requests and routes them to the appropriate handler function
+# The event parameter contains the request data, and context contains runtime information
+# The function checks the HTTP method and resource path to determine which operation to perform
 def lambda_handler(event, context):
     print("Request event method:", event.get("httpMethod"))
     print("EVENT\n", json.dumps(event, indent=2))
@@ -53,15 +59,15 @@ def lambda_handler(event, context):
 
     try:
         if event["httpMethod"] == REQUEST_METHOD["POST"] and event["requestContext"]["resourcePath"] == user_path:
-            response = save_user(json.loads(event["body"]))
+            response = save_user(json.loads(event["body"]))  # Uses DynamoDB `put_item`
         elif event["httpMethod"] == REQUEST_METHOD["GET"] and event["requestContext"]["resourcePath"] == user_param_path:
-            response = get_user(int(event["pathParameters"]["id"]))
+            response = get_user(int(event["pathParameters"]["id"]))  # Uses DynamoDB `get_item`
         elif event["httpMethod"] == REQUEST_METHOD["PATCH"] and event["requestContext"]["resourcePath"] == user_path:
-            response = modify_user(json.loads(event["body"]))
+            response = modify_user(json.loads(event["body"]))  # Uses DynamoDB `update_item`
         elif event["httpMethod"] == REQUEST_METHOD["DELETE"] and event["requestContext"]["resourcePath"] == user_path:
-            response = delete_user(int(event.get("queryStringParameters", {}).get("id")))
+            response = delete_user(int(event.get("queryStringParameters", {}).get("id")))  # Uses DynamoDB `delete_item`
         elif event["httpMethod"] == REQUEST_METHOD["GET"] and event["requestContext"]["resourcePath"] == user_path:
-            response = get_users()
+            response = get_users()  # Uses DynamoDB `scan`
         else:
             response = build_response(STATUS_CODE["NOT_FOUND"], event["requestContext"]["resourcePath"])
     except Exception as e:
@@ -70,7 +76,7 @@ def lambda_handler(event, context):
 
     return response
 
-# Save a new user
+# Used in POST request to save a user
 def save_user(request_body):
     try:
         # Convert 'id' to int if it's a number

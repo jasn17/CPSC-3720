@@ -166,7 +166,6 @@ components:
             - business
             - CSR
 
-
   #  ----- Added lines  ----------------------------------------
   responses:
     400Error:
