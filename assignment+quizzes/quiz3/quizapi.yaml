@@ -1,0 +1,115 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Quiz 3 Items API
+  description: An API to retreive items
+
+paths:
+  /quizapi:
+    get:
+      description: Returns a list of items
+      responses:
+        '200':
+          description: Successfully returned a list items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/item'
+        '400':
+          $ref: '#/components/responses/400Error'
+
+    post:
+      description: Lets a user post a new item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/item'
+      responses:
+        '200':
+          description: Successfully created a new item
+        '400':
+          $ref: '#/components/responses/400Error'
+
+    delete:
+      description: Lets a user delete an item by sending the info in the body
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/item'
+      responses:
+        '200':
+          description: Successfully deleted a new item
+        '400':
+          $ref: '#/components/responses/400Error'
+
+    put:
+      description: Lets a user update an existing new item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/item'
+      responses:
+        '200':
+          description: Successfully updated an item
+        '400':
+          $ref: '#/components/responses/400Error'
+
+  /quizapi/{id}:
+    get:
+      description: Get an item using its id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+
+      responses:
+        '200':
+          description: Successfully retrieved an item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/item'
+
+        '400':
+          $ref: '#/components/responses/400Error'
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+
+  schemas:
+    item:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: integer
+        name:
+            type: string
+        price:
+            type: string
+
+  responses:
+    400Error:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+  #  ---- /Added lines  ----

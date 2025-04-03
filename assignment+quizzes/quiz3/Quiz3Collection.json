@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "e26eca5d-61f2-465b-b9ba-72ace4aef3ff",
+		"name": "Quiz 3 Collection",
+		"description": "This collection is for testing your Quiz 3 AWS API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37800434"
+	},
+	"item": [
+		{
+			"name": "Get all the items",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWSUrl}}/quizapi",
+					"host": [
+						"{{AWSUrl}}"
+					],
+					"path": [
+						"quizapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get an item with ID in path",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWSUrl}}/quizapi/3",
+					"host": [
+						"{{AWSUrl}}"
+					],
+					"path": [
+						"quizapi",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post an item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": 10, \"name\": \"Chapstick\", \"price\": 3.99}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWSUrl}}/quizapi",
+					"host": [
+						"{{AWSUrl}}"
+					],
+					"path": [
+						"quizapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the items After Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWSUrl}}/quizapi",
+					"host": [
+						"{{AWSUrl}}"
+					],
+					"path": [
+						"quizapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put an item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": 5, \"name\": \"Sunglasses\", \"price\": 13.99}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWSUrl}}/quizapi",
+					"host": [
+						"{{AWSUrl}}"
+					],
+					"path": [
+						"quizapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put an item that doesn't exist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400 or 404\", function () {",
+							"    pm.expect([400, 404]).to.include(pm.response.code);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": 6, \"name\": \"Lanyard\", \"price\": 3.99}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWSUrl}}/quizapi",
+					"host": [
+						"{{AWSUrl}}"
+					],
+					"path": [
+						"quizapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the items after Put",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWSUrl}}/quizapi",
+					"host": [
+						"{{AWSUrl}}"
+					],
+					"path": [
+						"quizapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an item with ID in body",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": 4}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{AWSUrl}}/quizapi",
+					"host": [
+						"{{AWSUrl}}"
+					],
+					"path": [
+						"quizapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the items after Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{AWSUrl}}/quizapi",
+					"host": [
+						"{{AWSUrl}}"
+					],
+					"path": [
+						"quizapi"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "AWSUrl",
+			"value": "https://yourawsurl/yourclemsonusername",
+			"type": "string"
+		}
+	]
+}
