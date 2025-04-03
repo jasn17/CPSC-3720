@@ -10,11 +10,6 @@ servers:
 security:
   - BasicAuth: []
 paths:
-  # User has the following structure:
-  # get
-  # post
-  # patch
-  # delete
   /users:
     get:
       description: Returns all users
@@ -92,6 +87,11 @@ paths:
     delete:
       description: Delete a user using their unique id
       parameters:
+        # This section defines a parameter named "id" that is expected to be passed in the query string of the request.
+        # The parameter is required and should be of type integer.
+        # The "in" field specifies that the parameter is expected to be in the query string of the URL.
+        # The "required" field indicates that this parameter must be provided in the request.
+        # The "schema" field defines the data type of the parameter, which is an integer in this case.
         - name: id
           in: query
           required: true
@@ -106,6 +106,16 @@ paths:
           #  ----- Added line  ----------------------------------------
           $ref: '#/components/responses/400Error'
           #  ---- /Added line  ----------------------------------------
+  # This endpoint allows you to obtain information about a specific user using their unique ID.
+  # The ID is passed as a path parameter in the URL.
+  # The endpoint is defined as "/users/{id}", where "{id}" is a placeholder for the actual user ID.
+  # The "get" method is used to retrieve information about the user.
+  # The "description" field provides a brief explanation of what this endpoint does.
+  # Here is an example of how you would obtain information about a user with ID 123:
+  # GET /users/123
+  # In this example, the ID of the user you want to retrieve is specified in the URL path.
+  # The "parameters" section defines the expected input for this endpoint.
+  # The "name" field specifies the name of the parameter, which is "id" in this case.
   /users/{id}:
     get:
       description: Obtain information about a user using their unique id
@@ -133,7 +143,6 @@ paths:
           #  ----- Added line  ----------------------------------------
           $ref: '#/components/responses/400Error'
           #  ---- /Added line  ----------------------------------------
-
 
 components:
   securitySchemes:
