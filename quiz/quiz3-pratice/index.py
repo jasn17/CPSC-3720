@@ -135,6 +135,7 @@ def modify_user(request_body):
         print("Error modifying user:", e)
         return build_response(STATUS_CODE["NOT_FOUND"], {"message": "Error updating user"})
 
+# Used in DELETE request to delete a user
 def delete_user(user_id):
     try:
         response = table.delete_item(
@@ -155,6 +156,7 @@ def delete_user(user_id):
         print("Error deleting user:", e)
         return build_response(STATUS_CODE["NOT_FOUND"], {"message": "Error deleting user"})
 
+# The user ID is passed as a query parameter (in the link)
 def get_users():
     try:
         response = table.scan()
