@@ -9,8 +9,12 @@ servers:
 
 security:
   - BasicAuth: []
-
 paths:
+  # User has the following structure:
+  # get
+  # post
+  # patch
+  # delete
   /users:
     get:
       description: Returns all users
@@ -31,8 +35,15 @@ paths:
           #  ---- /Added line  ----------------------------------------
     post:
       description: Post a new user
+      # For most post request, this requires a request body
       requestBody:
         required: true
+        # This section defines the content type and schema for a specific API response or request.
+        # The "application/json" key indicates that the content type is JSON.
+        # The "schema" key specifies the structure of the JSON data.
+        # The "$ref" field is used to reference an existing schema definition within the OpenAPI document.
+        # In this case, it points to the "User" schema defined under "#/components/schemas/User".
+        # This ensures that the JSON data adheres to the structure and validation rules defined in the "User" schema.
         content:
           application/json:
             schema:
