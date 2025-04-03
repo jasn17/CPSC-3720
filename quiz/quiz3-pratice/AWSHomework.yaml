@@ -58,9 +58,18 @@ paths:
           $ref: '#/components/responses/400Error'
           #  ---- /Added line  ----------------------------------------
     patch:
+      # Most of the time, this requires a request body
       description: Update a user's type
       requestBody:
         required: true
+        # This YAML file defines a schema for a JSON object.
+        # The schema specifies the structure and data types of the object.
+        # 
+        # The object contains the following properties:
+          # - `id`: An integer that likely serves as a unique identifier.
+          # - `updateKey`: A string that may represent the key or field to be updated.
+          # - `updateValue`: A string that may represent the new value to be assigned to the key specified by `updateKey`.
+        # This schema is useful for validating JSON data to ensure it adheres to the expected format.
         content:
           application/json:
             schema:
