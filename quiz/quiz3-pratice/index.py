@@ -94,7 +94,7 @@ def save_user(request_body):
         print("Error saving user:", e)
         return build_response(STATUS_CODE["NOT_FOUND"], {"message": "Error saving user"})
 
-# Get a user by ID
+# Used in GET request to get a user
 def get_user(member_id):
     try:
         response = table.get_item(Key={"id": member_id})
@@ -108,7 +108,7 @@ def get_user(member_id):
         print("Error getting user:", e)
         return build_response(STATUS_CODE["NOT_FOUND"], {"message": "Error retrieving user"})
 
-# Modify a user
+# Used in PATCH request to modify a user
 def modify_user(request_body):
     try:
         # Convert 'id' to int if it's a number
