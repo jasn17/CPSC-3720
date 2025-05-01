@@ -190,19 +190,16 @@ NOTE: Make sure you understand velocity vs story point estimates and how they ar
 		- establish sprint cadence, ceremonies (planning, daily standup, review, retro)
 
 ## Tools and SDLC
-
 #### Trello
 - Requirements Analysis and Sprint Planning
 	- Kanban board for transparent tracking of backlog items and sprint tasks.
 	- visualizes bottlenecks for continuous flow.
 	- Facilitates collaboration and conversation in daily stand-ups, sprint planning, and retrospectives.
-
 #### Postman
 - Define & Design Testing phases
 	- refine user-story acceptance criteria
 	- parallel development by decoupling front-end and back-end using mocks and examples.
 	- shared workspaces for cross-functional collaboration on API design and validation.
-
 #### Git
 - Development phase
 	- encourages frequent, small commits keeping work incremental and reviewable.
