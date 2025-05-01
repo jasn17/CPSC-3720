@@ -105,6 +105,42 @@ Burn down Chart - visual chart tracking remaining work (x-axis is time and y-axi
 Impediment Log - scrum master logs all impediments
 
 ## Describe the Three Ways to achieve a DevOps culture.  For each "way" specify at least three practices required.
-1. 
-2. 
-3. 
+1. The principles of Flow
+	- Limit the number of work in progress to finish more and expose bottleneck.
+	- Visualize work with Trello board so everything is logged. 
+	- Keep non-main branches on git short (do no commit to long to work on a feature)
+	- Define environemnts and automate unit/integration tests
+2. The principles of Feedback
+	- Every change goes through a light code review via pull request 
+	- You break it, you fix it
+	- Pair programming when the time is appropriate
+	- Share collaboration channel (Trello board)
+
+3. The principles of Continual Learning and experimentation
+	- Chaos monkey, controlled injection to try and crash your program
+	- Incident reviews, what went wrong and what can we do next time?
+	- Internal knowledge sharing via a lunch 
+
+## Identfiy three key takeaways, from the the various readings you did in the Mythical Man Month by Fred Brooks.
+1. Software by nature is complex much like a tarpit, the more code you add, features you add the harder the system becomes to maintain and understand.
+2. Brooke's law states that adding more manpower towards the deadline slows development.
+3. Conceptual integrity and prototyping, a system’s quality flows from a unified design vision—best achieved when a small group or lead architect drives the overall concept.
+4. Brooks’s rule of thumb allocates roughly 1/3 of project time to detailed planning, 1/6 to coding, 1/4 to component and early system testing, and 1/4 to full system testing
+
+## Describe the difference between functional and non-functional testing and provide at least three examples of each.
+- Functional testing verifies what the system does, validating each feature against its specification, ensuring correct behavior for given inputs
+	- Unit testing
+	- integration testing
+	- endpoint testing.
+- Non-functional verifies how the system behaves, system qualities and constraints such as performance, reliability, security, and usability
+	- Security testing
+	- usability testing
+	- load testing.
+
+	
+
+
+
+
+
+
