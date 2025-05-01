@@ -137,10 +137,59 @@ Impediment Log - scrum master logs all impediments
 	- usability testing
 	- load testing.
 
-	
+## Before starting a sprint 
+```
+What is needed to create a release plan for a product? 
 
+How do you estimate and map to a schedule? 
 
+What is needed before you start with the actual story development?
 
+NOTE: Make sure you understand velocity vs story point estimates and how they are used together to create a plan.
+```
+- Creating a release plan for a product
+	- Product Vision
+		- high-level goals, target users, major features 
+	- Product BL 
+		- with stories + epics
+	- Sizing & Estimation
+		- Estimate each story using relative story-point sizing
+		- INVEST: independent, negotiable, valuable, estimatable, small, testable.
+	- Sprint Cadence & Velocity
+		- 2 weeks per sprint
+		- Divide total backlog points by velocity to compute number of sprints, then map to calendar weeks to predict release date
+- Estimate and map to a schedule
+	- Relative Sizing (Story Points)
+		- size stories by complexity/effort
+	- Dependency chart for priority
+- Story development
+	- Sprint 0 / Kickoff
+		- Set up dev/test/staging environments
+	- Backlog refinement
+		- Refine epics into INVEST-compliant stories
+	- Define Architecture & Design
+		- document system architecture (microservices/APIs, data models, deployment topology)
+	- Team Alignment & Ceremonies
+		- Clarify roles (Product Owner, Scrum Master, Developers)
+		- establish sprint cadence, ceremonies (planning, daily standup, review, retro)
 
+##
 
+#### Trello
+- Requirements Analysis and Sprint Planning
+	- Kanban board for transparent tracking of backlog items and sprint tasks.
+	- visualizes bottlenecks for continuous flow.
+	- Facilitates collaboration and conversation in daily stand-ups, sprint planning, and retrospectives.
 
+#### Postman
+- Define & Design Testing phases
+	- Enables “shift-left” testing through collection-based automated tests and continuous integration via Newman.
+	- Promotes parallel development by decoupling front-end and back-end using mocks and examples.
+	- Fosters shared workspaces for cross-functional collaboration on API design and validation.
+
+#### Git
+- Development phase
+	- Encourages frequent, small commits keeping work incremental and reviewable.
+	- Pull request for peer reviews, automated builds, and gating quality checks.
+	- nables branching strategies (feature branches, release branches) to manage parallel work and releases.
+	- Enable rapid feedback on code changes, keeping the team’s work aligned and releasable.
