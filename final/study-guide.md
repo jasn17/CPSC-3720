@@ -99,7 +99,9 @@ As a seller, I can list my car for sale, so that I can get the best price with t
 ## Name and briefly describe the roles, ceremonies and artifacts in Agile using Scrum.
 #### Roles: 
 Scrum Master - remove impediments (servant leadership), enforce scrum values + practices, enforce productivity, shield team from outside distractions, watch all roles and functions
+
 Developers - 4-9 cross functional team, full-time, self-organizing teams, changing teams should only be done between sprints
+
 Product Owner - works on product backlog, decide release date, decide on features, finances, dictate which features to work on every sprint, accept/reject work results.
 
 #### Ceremonies:
