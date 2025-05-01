@@ -199,9 +199,9 @@ NOTE: Make sure you understand velocity vs story point estimates and how they ar
 
 #### Postman
 - Define & Design Testing phases
-	- Enables “shift-left” testing through collection-based automated tests and continuous integration via Newman.
-	- Promotes parallel development by decoupling front-end and back-end using mocks and examples.
-	- Fosters shared workspaces for cross-functional collaboration on API design and validation.
+	- refine user-story acceptance criteria
+	- parallel development by decoupling front-end and back-end using mocks and examples.
+	- shared workspaces for cross-functional collaboration on API design and validation.
 
 #### Git
 - Development phase
