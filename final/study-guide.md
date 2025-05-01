@@ -205,7 +205,7 @@ NOTE: Make sure you understand velocity vs story point estimates and how they ar
 
 #### Git
 - Development phase
-	- Encourages frequent, small commits keeping work incremental and reviewable.
-	- Pull request for peer reviews, automated builds, and gating quality checks.
-	- nables branching strategies (feature branches, release branches) to manage parallel work and releases.
-	- Enable rapid feedback on code changes, keeping the team’s work aligned and releasable.
+	- encourages frequent, small commits keeping work incremental and reviewable.
+	- pull request for peer reviews, automated builds, and gating quality checks.
+	- enables branching strategies (feature branches, release branches) to manage parallel work and releases.
+	- enable rapid feedback on code changes, keeping the team’s work aligned and releasable.
