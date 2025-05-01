@@ -48,35 +48,45 @@ As a seller, I can list my car for sale, so that I can get the best price with t
 ```
 #### Epic 1
 1. As a broke high school student, I can filter the cars by price range so my purchase can be within my budget. 
+	
 	AT: The filtered output of the price range should display cars with prices not below the low-end price range and not exceed the high-end price range.
 
 2. As a mechanic, I can filter all cars by model so that I can browse through car models that I like. 
+	
 	AT: The filtered output should not display any vehicles outside of the queried filter model selected. 
 
 3. As a father, I can filter cars by mileage so that I can find the most reliable vehicle for my high school kid.  
+	
 	AT: The filtered output should not display any vehicles with total mileage above the queried number. 
 
 4. As a environmentalist, I can filter cars by vehicle type so that I can choose my options between an electric, gas, or diesel vehicles. 
+	
 	AT: The filtered output displays only the vehicles specified in the query or a screen displaying "No results"
 
 5. As a person with no car, I can filter the nearest sellers based on my location so that I don't have to uber long distances to see a potential buying opportunity. 
+	
 	AT: The all queried results shows how far the seller from me (in miles).
 
 #### Epic 2
 
 1. As a car collector, I can create multiple car listing so that my chances to sell a car increases. 
+	
 	AT: With every new entry listed, I can see my car under "my current listing" as well as all of the details about the car listed. 
 
 2. As a car enthusiast, I can take and upload photos of my car so people can see the condition of the car before deciding they are interested or not. 
+	
 	AT: The upload photo button should prompt the seller to select a photo and the photo should be clearly displayed under the listing.
 
 3. As a car salesman, I can edit the vehicle's price under my current listings so I can adjust the price for current market conditions.
+	
 	AT: Clicking edit, submitting the new price range, the listing displays the new price.
 
 4. As a practical seller, I can view my listing analytics to see how many people have clicked on my listing so I can decided which listings to take down and which ones to keep up.
+	
 	AT: Clicking the analytics tab and clicking on an individual listing it should show a graph of the number of clicks this particular listing got this month. 
 
 5. As a repo man, I can submit my listings by vehicle type so that my sellers can find exactly what they want. 
+	
 	AT: With every new listing I can label this listing as a motorcycle, truck, car, or boat. After hitting submit the appropriate listing shows up. 
 
 ## Identify at least five microservices that are specific to a used car site (not general services like Accounts and Notifications).
@@ -94,14 +104,20 @@ Product Owner - works on product backlog, decide release date, decide on feature
 
 #### Ceremonies:
 Daily scrum meeting - 15 minutes standup answering: what did you do yesterday, what did you do today, is there any current impediment.
+
 Sprint planning - teams select items from product BL they can commit to completing adding these items to sprint BL, item broken further down into time
+
 Sprint review - entire team presents what they have completed this sprint, demo of code or features, no slides 
+
 Sprint retrospective - whole team gathers and decides what to start doing, what to stop doing, and what they liked and would like to continue doing (love, loathed, learned)
 
 #### Artifacts:
 Product BL - requirements to complete the project listed as epics and stories with story point values
+
 Sprint BL - stories that are chosen to be completed on the current sprint. stories should be broken down into tasks, with story point values assigned, and a timeline 
+
 Burn down Chart - visual chart tracking remaining work (x-axis is time and y-axis is remaining story points)
+
 Impediment Log - scrum master logs all impediments
 
 ## Describe the Three Ways to achieve a DevOps culture.  For each "way" specify at least three practices required.
@@ -173,7 +189,7 @@ NOTE: Make sure you understand velocity vs story point estimates and how they ar
 		- Clarify roles (Product Owner, Scrum Master, Developers)
 		- establish sprint cadence, ceremonies (planning, daily standup, review, retro)
 
-##
+## Tools and SDLC
 
 #### Trello
 - Requirements Analysis and Sprint Planning
