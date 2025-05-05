@@ -58,7 +58,7 @@ As a seller, I can list my car for sale, so that I can get the best price with t
 3. As a father, I can filter cars by mileage so that I can find the most reliable vehicle for my high school kid.  
 	
 	AT: The filtered output should not display any vehicles with total mileage above the queried number. 
-
+\
 4. As a environmentalist, I can filter cars by vehicle type so that I can choose my options between an electric, gas, or diesel vehicles. 
 	
 	AT: The filtered output displays only the vehicles specified in the query or a screen displaying "No results"
